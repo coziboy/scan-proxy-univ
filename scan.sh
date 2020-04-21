@@ -11,6 +11,7 @@ function banner(){
 banner
 
 if [ -n "$1" ]; then
+	printf "Masukkan url universitas?: $1\n"
 	universitas=$1
 else
 	printf "Masukkan url universitas?: "
