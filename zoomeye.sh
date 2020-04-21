@@ -4,7 +4,7 @@ function banner(){
 		echo -e "_________________________"
 		echo -e "TOOLS SCANNING PROXY"
 		echo -e "Author: Andreas Asatera"
-		echo -e "Geek IT"
+		echo -e "@andreas_nofa"
 		echo -e "_________________________"
 	  echo -e "zoomeye.org | Version:1.0\n\n"
 }
