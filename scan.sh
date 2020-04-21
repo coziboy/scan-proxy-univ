@@ -4,7 +4,7 @@ function banner(){
 	echo -e "_________________________"
 	echo -e "TOOLS SCANNING PROXY"
 	echo -e "Author: Andreas Asatera"
-	echo -e "@andreas_nofa"
+	echo -e "Telegram: @andreas_nofa"
 	echo -e "Script by: @config_geratis"
 	echo -e "_________________________"
 }
