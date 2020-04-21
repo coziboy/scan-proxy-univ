@@ -5,4 +5,4 @@
  - `$ pkg install curl`
  - `git clone https://github.com/coziboy/scan-proxy-univ.git`
  - `cd scan-proxy-univ`
- - `bash zoomeye.sh`
+ - `bash zoomeye.sh.x`
