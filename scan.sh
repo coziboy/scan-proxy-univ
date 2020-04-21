@@ -11,15 +11,19 @@ function banner(){
 banner
 
 if [ -n "$1" ]; then
-	printf "Masukkan url universitas?: $1\n"
-	universitas=$1
+	printf "Masukkan host/ip yang mau di scan?: $1\n"
+	input=$1
 else
-	printf "Masukkan url universitas?: "
-	read universitas;
+	printf "Masukkan host/ip yang mau di scan?: "
+	read input;
 fi
 echo -e "(sedang memproses)"
-ip=$(dig +short $universitas | awk '{ print ; exit }')
-json=$(curl -# "https://api.shodan.io/shodan/host/{${ip}}?key={OZi7Lq6PPz8B15jO1nFa1Hagt5NulEBI}")
+if ! [[ ${proxy} =~ [0-9] ]];then
+	scan=$(dig +short $input | awk '{ print ; exit }')
+else
+	scan=$input
+fi
+json=$(curl -# "https://api.shodan.io/shodan/host/{${scan}}?key={MKULA7xUARsri5Ls89FZx4ifCBacA5qr}")
 result=$(echo $json | jq ".data | .[]")
 host=$(echo $result | jq ".http.host" | sed -e 's/"//g' | awk {'print "Proxy: " $1,$2'})
 port=$(echo $result | jq ".port" | sed -e 's/"//g' | awk {'print "Port: " $1,$2'})
