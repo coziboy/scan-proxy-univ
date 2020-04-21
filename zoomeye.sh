@@ -23,11 +23,13 @@ else
 	query=$(curl -# -X GET "https://api.zoomeye.org/host/search?query=hostname:$universitas&page=1" -H "Authorization: JWT $access_token")
 fi
 result=$(echo $query | jq ".matches | .[]")
-host=$(echo $result | jq ".ip" | sed -e 's/"//g' | awk {'print "Proxy: " $1,$2'})
-port=$(echo $result | jq ".portinfo | .port" | sed -e 's/"//g' | awk {'print "Port: " $1,$2'})
-app=$(echo $result | jq ".portinfo | .app" | sed -e 's/"//g' | awk {'print "App: " $1,$2'})
-banner=$(echo $result | jq ".portinfo | .banner" | sed -e 's/"//g' | grep -Eo "HTTP.*" | cut -d "\\" -f1 | awk {'print "Response: " $1,$2'})
-echo -e "\n$host"
-echo -e "\n$port"
-echo -e "\n$app"
-echo -e "\n$banner"
+# host=$(echo $result | jq ".ip" | sed -e 's/"//g' | awk {'print "Proxy: " $1,$2'})
+# port=$(echo $result | jq ".portinfo | .port" | sed -e 's/"//g' | awk {'print "Port: " $1,$2'})
+# app=$(echo $result | jq ".portinfo | .app" | sed -e 's/"//g' | awk {'print "App: " $1,$2'})
+# banner=$(echo $result | jq ".portinfo | .banner" | sed -e 's/"//g' | grep -Eo "HTTP.*" | cut -d "\\" -f1 | awk {'print "Response: " $1,$2'})
+# echo -e "\n$host"
+# echo -e "\n$port"
+# echo -e "\n$app"
+# echo -e "\n$banner"
+lists=$(echo $result | jq '"\(.ip):\(.portinfo | .port)	| App: \(.portinfo | .app), \(.portinfo | .banner) "'| sed -e 's/"//g' | awk {'print "[*]" $1,$2,$3,$4,$5,$6'})
+echo -e "\n$lists"
