@@ -6,4 +6,4 @@
  - `$ pkg install dnsutils`
  - `git clone https://github.com/coziboy/scan-proxy-univ.git`
  - `cd scan-proxy-univ`
- - `bash zoomeye.sh`
+ - `bash scan.sh` atau `scan.sh [alamat_universitas]`

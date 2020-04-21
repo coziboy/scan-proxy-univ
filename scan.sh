@@ -5,13 +5,18 @@ function banner(){
 	echo -e "TOOLS SCANNING PROXY"
 	echo -e "Author: Andreas Asatera"
 	echo -e "@andreas_nofa"
+	echo -e "Script by: @config_geratis"
 	echo -e "_________________________"
-	echo -e "zoomeye.org | Version:1.0\n\n"
 }
 banner
 
-printf "Masukkan url universitas?: "
-read universitas;
+if [ -n "$1" ]; then
+	universitas=$1
+else
+	printf "Masukkan url universitas?: "
+	read universitas;
+fi
+echo -e "(sedang memproses)"
 ip=$(dig +short $universitas | awk '{ print ; exit }')
 json=$(curl -# "https://api.shodan.io/shodan/host/{${ip}}?key={OZi7Lq6PPz8B15jO1nFa1Hagt5NulEBI}")
 result=$(echo $json | jq ".data | .[]")
