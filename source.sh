@@ -22,7 +22,7 @@ if ! [[ ${proxy} =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]];then
 else
 	scan=$input
 fi
-json=$(curl -# "https://api.shodan.io/shodan/host/{${scan}}?key={MKULA7xUARsri5Ls89FZx4ifCBacA5qr}")
+json=$(curl -# "https://api.shodan.io/shodan/host/{$scan}?key={MKULA7xUARsri5Ls89FZx4ifCBacA5qr}")
 result=$(echo $json | jq ".data | .[]")
 host=$(echo $result | jq ".http.host" | sed -e 's/"//g' | awk {'print "Proxy: " $1,$2'})
 port=$(echo $result | jq ".port" | sed -e 's/"//g' | awk {'print "Port: " $1,$2'})
