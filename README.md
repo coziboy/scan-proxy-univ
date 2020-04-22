@@ -4,6 +4,7 @@
  - `$ pkg install jq`
  - `$ pkg install curl`
  - `$ pkg install dnsutils`
+ - `$ pkg install nmap`
  - `git clone https://github.com/coziboy/scan-proxy-univ.git`
  - `cd scan-proxy-univ`
  - `bash scan.sh``
