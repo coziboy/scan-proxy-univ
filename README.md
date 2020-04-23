@@ -7,5 +7,4 @@
  - `$ pkg install nmap`
  - `git clone https://github.com/coziboy/scan-proxy-univ.git`
  - `cd ~/scan-proxy-univ`
- - tes update
  - `bash scan.sh``
