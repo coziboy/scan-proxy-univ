@@ -1,10 +1,10 @@
 # Tools Scan Proxy Universitas
- - `$ pkg install git`
- - `$ pkg install bash`
- - `$ pkg install jq`
- - `$ pkg install curl`
- - `$ pkg install dnsutils`
- - `$ pkg install nmap`
+## Panduan install
  - `git clone https://github.com/coziboy/scan-proxy-univ.git`
  - `cd ~/scan-proxy-univ`
- - `bash scan.sh``
+ - `bash setup.sh`
+
+## Jalankan tools
+
+ - `Buka Termux`
+ - Ketik `scan`
